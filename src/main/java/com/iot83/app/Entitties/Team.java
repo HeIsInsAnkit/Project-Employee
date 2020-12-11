@@ -1,4 +1,4 @@
-package com.iot83.app.Entitty;
+package com.iot83.app.Entitties;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

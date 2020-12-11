@@ -1,6 +1,6 @@
 package com.iot83.app.controller;
 
-import com.iot83.app.Entitty.User;
+import com.iot83.app.Entitties.User;
 import com.iot83.app.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

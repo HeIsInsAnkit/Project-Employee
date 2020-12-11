@@ -1,6 +1,6 @@
 package com.iot83.app.Service;
 
-import com.iot83.app.Entitty.User;
+import com.iot83.app.Entitties.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
