@@ -1,11 +1,13 @@
 package com.iot83.app.Entitties;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Team {
     @Id
+    @GeneratedValue
     private String id;
     private String teamName;
 

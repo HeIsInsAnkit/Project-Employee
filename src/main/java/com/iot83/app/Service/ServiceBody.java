@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class ServiceBody implements UserService {
 
@@ -43,6 +44,5 @@ public class ServiceBody implements UserService {
     public void deleteUser(String userId) {
         userDao.deleteById(userId);
     }
-
 
 }
