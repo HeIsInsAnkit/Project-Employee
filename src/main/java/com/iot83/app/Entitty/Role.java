@@ -6,6 +6,10 @@ import javax.persistence.Id;
 @Entity
 public class Role {
 
+    @Id
+    private String id;
+    private String userRole;
+
     public Role() {
         super();
     }
@@ -31,10 +35,4 @@ public class Role {
     public void setUserRole(String userRole) {
         this.userRole = userRole;
     }
-
-    @Id
-    private String id;
-
-    private String userRole;
-
 }

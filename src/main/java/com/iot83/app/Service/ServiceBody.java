@@ -3,6 +3,8 @@ package com.iot83.app.Service;
 import com.iot83.app.Entitty.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,12 +15,16 @@ public class ServiceBody implements UserService {
 
     @Override
     public List<User> getUserDetails() {
-        return userDao.findAll();
+        List<User> list = new ArrayList<>();
+        for(User user : userDao.findAll()) {
+            list.add(user);
+        }
+        return list;
     }
 
     @Override
     public User getSingleUser(String userId) {
-        return userDao.getOne(userId);
+        return userDao.findById(userId).get();
     }
 
     @Override
@@ -35,7 +41,7 @@ public class ServiceBody implements UserService {
 
     @Override
     public void deleteUser(String userId) {
-        userDao.delete(userDao.getOne(userId));
+        userDao.deleteById(userId);
     }
 
 
