@@ -1,4 +1,4 @@
-package com.iot83.app.Exceptions;
+package com.iot83.app.exceptions;
 
 public class MessageHandler {
 

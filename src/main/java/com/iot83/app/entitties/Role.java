@@ -1,7 +1,6 @@
-package com.iot83.app.Entitties;
+package com.iot83.app.entitties;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -9,7 +8,7 @@ public class Role {
 
     @Id
     private String id;
-    private String userRole;
+    private String roleName;
 
     public Role() {
         super();
@@ -18,7 +17,7 @@ public class Role {
     public Role(String id, String userRole) {
         super();
         this.id = id;
-        this.userRole = userRole;
+        this.roleName = userRole;
     }
 
     public String getId() {
@@ -29,11 +28,11 @@ public class Role {
         this.id = id;
     }
 
-    public String getUserRole() {
-        return userRole;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setUserRole(String userRole) {
-        this.userRole = userRole;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }

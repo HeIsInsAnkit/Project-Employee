@@ -1,6 +1,6 @@
-package com.iot83.app.Service;
+package com.iot83.app.service;
 
-import com.iot83.app.Entitties.User;
+import com.iot83.app.entitties.User;
 
 import java.util.List;
 

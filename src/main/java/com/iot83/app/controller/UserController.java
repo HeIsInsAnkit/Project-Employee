@@ -1,11 +1,9 @@
 package com.iot83.app.controller;
 
-import com.iot83.app.Entitties.User;
-import com.iot83.app.Exceptions.MessageHandler;
-import com.iot83.app.Service.UserService;
+import com.iot83.app.entitties.User;
+import com.iot83.app.exceptions.MessageHandler;
+import com.iot83.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

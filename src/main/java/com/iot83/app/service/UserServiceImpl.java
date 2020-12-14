@@ -1,6 +1,6 @@
-package com.iot83.app.Service;
+package com.iot83.app.service;
 
-import com.iot83.app.Entitties.User;
+import com.iot83.app.entitties.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Service
-public class ServiceBody implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;

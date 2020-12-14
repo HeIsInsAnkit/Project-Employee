@@ -1,7 +1,6 @@
-package com.iot83.app.Entitties;
+package com.iot83.app.entitties;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity

@@ -1,4 +1,4 @@
-package com.iot83.app.Entitties;
+package com.iot83.app.entitties;
 
 import javax.persistence.*;
 
@@ -6,13 +6,13 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    private String Id;
-    private String FirstName;
-    private String MiddleName;
-    private String LastName;
-    private String Email;
+    private String id;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String email;
     private String password;
-    private String MobileNumber;
+    private String mobileNumber;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
@@ -39,43 +39,43 @@ public class User {
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getMiddleName() {
-        return MiddleName;
+        return middleName;
     }
 
     public void setMiddleName(String middleName) {
-        MiddleName = middleName;
+        this.middleName = middleName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
@@ -87,22 +87,22 @@ public class User {
     }
 
     public String getMobileNumber() {
-        return MobileNumber;
+        return mobileNumber;
     }
 
     public void setMobileNumber(String mobileNumber) {
-        MobileNumber = mobileNumber;
+        this.mobileNumber = mobileNumber;
     }
 
     public User(String id, String firstName, String middleName, String lastName, String email, String password, String mobileNumber, Role role, Team team) {
         super();
-        Id = id;
-        FirstName = firstName;
-        MiddleName = middleName;
-        LastName = lastName;
-        Email = email;
+        this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.email = email;
         this.password = password;
-        MobileNumber = mobileNumber;
+        this.mobileNumber = mobileNumber;
         this.role = role;
         this.team = team;
     }
