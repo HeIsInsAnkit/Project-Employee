@@ -8,7 +8,6 @@ import javax.persistence.Id;
 public class Role {
 
     @Id
-    @GeneratedValue
     private String id;
     private String userRole;
 

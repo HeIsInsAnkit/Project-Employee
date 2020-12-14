@@ -1,6 +1,5 @@
 package com.iot83.app.Exceptions;
 
-import org.springframework.boot.context.config.ConfigDataNotFoundException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

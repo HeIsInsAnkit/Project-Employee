@@ -7,7 +7,6 @@ import javax.persistence.Id;
 @Entity
 public class Team {
     @Id
-    @GeneratedValue
     private String id;
     private String teamName;
 
