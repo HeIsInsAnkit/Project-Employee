@@ -1,6 +1,7 @@
 package com.iot83.app.controller;
 
 import com.iot83.app.Entitties.User;
+import com.iot83.app.Exceptions.MessageHandler;
 import com.iot83.app.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,14 +48,9 @@ public class UserController {
 
     //delete User by Id
     @DeleteMapping("/userDetails/{userId}")
-    public ResponseEntity<HttpStatus> deleteUser(@PathVariable String userId) {
-        try {
+    public MessageHandler deleteUser(@PathVariable String userId) {
             userService.deleteUser(userId);
-            return  new ResponseEntity<>(HttpStatus.OK);
-        }
-        catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        return new MessageHandler("true" , "Record successfully deleted");
     }
 
 
