@@ -1,5 +1,8 @@
 package com.iot83.app.entitties;
 
+import org.springframework.lang.NonNull;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,11 +10,17 @@ public class User {
 
     @Id
     private String id;
+    @NonNull
     private String firstName;
+    @NonNull
     private String middleName;
+    @NonNull
     private String lastName;
+    @NonNull
     private String email;
+    @NonNull
     private String password;
+    @NonNull
     private String mobileNumber;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -83,7 +92,7 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = new BCryptPasswordEncoder().encode(password);
     }
 
     public String getMobileNumber() {

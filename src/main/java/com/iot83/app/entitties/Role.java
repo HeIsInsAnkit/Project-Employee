@@ -1,5 +1,7 @@
 package com.iot83.app.entitties;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,6 +10,7 @@ public class Role {
 
     @Id
     private String id;
+    @NonNull
     private String roleName;
 
     public Role() {

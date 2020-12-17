@@ -1,5 +1,7 @@
 package com.iot83.app.entitties;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,6 +9,7 @@ import javax.persistence.Id;
 public class Team {
     @Id
     private String id;
+    @NonNull
     private String teamName;
 
     public Team() {

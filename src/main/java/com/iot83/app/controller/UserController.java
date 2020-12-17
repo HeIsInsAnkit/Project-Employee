@@ -2,8 +2,14 @@ package com.iot83.app.controller;
 
 import com.iot83.app.entitties.User;
 import com.iot83.app.exceptions.MessageHandler;
+import com.iot83.app.service.UserDetailsServiceImpl;
 import com.iot83.app.service.UserService;
+import com.iot83.app.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +18,16 @@ import java.util.List;
 public class UserController {
 
     @Autowired
+    private UserDetailsServiceImpl userDetailsService;
+
+    @Autowired
     private UserService userService;
+
+    @Autowired
+    private JwtUtil jwtTokenUtil;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     @GetMapping("/home")
     public String HomePage() {
@@ -33,9 +48,26 @@ public class UserController {
     }
 
     //Add new User
-    @PostMapping("/userDetails")
-    public User addUser(@RequestBody User userDetails) {
-        return userService.addUser(userDetails);
+    @PostMapping("/userDetails/save")
+    public String addUser(@RequestBody User userDetails) throws Exception {
+        try {
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                    userDetails.getEmail(),
+                    userDetails.getPassword()
+            ));
+        }
+        catch (BadCredentialsException e) {
+            throw new Exception("Incorrect Username  or Password",e);
+        }
+
+        final UserDetails userDetails1 = userDetailsService
+                .loadUserByUsername(userDetails.getEmail());
+
+        final String jwt = jwtTokenUtil.generateToken(userDetails1);
+
+        userService.addUser(userDetails);
+
+        return jwt;
     }
 
     //update old User
